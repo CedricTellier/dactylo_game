@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>game</class>
+ <widget class="QWidget" name="game">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>742</width>
+    <height>436</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>MS UI Gothic</family>
+    <kerning>true</kerning>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Jeu</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="gridLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>141</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="1" column="1">
+     <widget class="QLabel" name="lbScore">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Verdana&quot;;
+border-radius: 10px;</string>
+      </property>
+      <property name="text">
+       <string>Score</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="lbJoker">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Verdana&quot;;
+border-radius: 10px;</string>
+      </property>
+      <property name="text">
+       <string>Joker</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QLabel" name="lbNbJoker">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Verdana&quot;;
+border-radius: 10px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QLabel" name="lbNbScore">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Verdana&quot;;
+border-radius: 10px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1" colspan="2">
+     <widget class="QLabel" name="lbNomJoueur">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+font:12pt &quot;Verdana&quot;;
+border-radius: 10px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="btPause">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>360</y>
+     <width>151</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Verdana&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Pause / Lecture</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="leTaper">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>360</y>
+     <width>341</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(255, 255, 255);
+font: 12pt &quot;Verdana&quot;;
+border-radius: 15px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>Zone de saisie</string>
+   </property>
+  </widget>
+  <widget class="QOpenGLWidget" name="OpenGLjeu">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>10</y>
+     <width>571</width>
+     <height>341</height>
+    </rect>
+   </property>
+   <property name="toolTipDuration">
+    <number>6</number>
+   </property>
+   <property name="layoutDirection">
+    <enum>Qt::RightToLeft</enum>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btSound">
+   <property name="geometry">
+    <rect>
+     <x>650</x>
+     <y>370</y>
+     <width>75</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: green
+</string>
+   </property>
+   <property name="text">
+    <string>Sound</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btTest">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>170</y>
+     <width>81</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Test</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
