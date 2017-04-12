@@ -10,6 +10,9 @@
     <height>151</height>
    </rect>
   </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
   <property name="windowTitle">
    <string>Name</string>
   </property>
@@ -31,10 +34,22 @@
      <bold>false</bold>
     </font>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">background-color: rgb(255, 255, 255);
 font: 12pt &quot;Verdana&quot;;
 border-radius: 10px;</string>
+   </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
+   <property name="maxLength">
+    <number>20</number>
+   </property>
+   <property name="frame">
+    <bool>true</bool>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -61,12 +76,18 @@ border-radius: 10px;</string>
      <bold>false</bold>
     </font>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;Verdana&quot;;</string>
+    <string notr="true">:focus {background-color:#CECECE;border-radius:10px;outline:none;font :bold;}
+:!focus{background-color: rgb(255, 255, 255);border-radius:10px}</string>
    </property>
    <property name="text">
     <string>Start</string>
+   </property>
+   <property name="autoDefault">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>

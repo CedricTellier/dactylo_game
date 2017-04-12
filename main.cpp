@@ -1,28 +1,63 @@
 #include "home.h"
 #include <QApplication>
-#include "bdd.h"
+
+
+/**
+ * @file qMain
+ * @brief Application de dactylographie
+ * @author Cédric Tellier
+ * @version 1.0
+ * @date 11 avril 2017
+ */
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     home Accueil;
 
-    //Création ou vérification de la base de donnée
-    BDD baseDactylo;
-    baseDactylo.createBDD();
+    /**
+      \mainpage
+        Bonjour et bienvenue dans ce programme de datylographie.
+
+      \subsection
+        Un petit jeu simple de dactylographie.\n
+        60 mots et de moins en moins de temps pour les taper.\n
+        3 jokers disponibles.\n
+        Que le meilleur gagne.
+
+        Cette documentatition a pour but d'apporter le détail de l'implémentation du code.\n
+        Elle nécessite d'être correctement lue afin de pouvori maintenir l'applciation durablement.
+     */
+
+
+    //Gestion de la couleur
+    Accueil.setStyleSheet("background-color:#B0E0E6");
+    Accueil.setCouleur("background-color:#B0E0E6");
+
+    //Ouverture de la page d'accueil
+    Accueil.show();
+
+    return a.exec();
 
     //----------------------------------------//
     //----Session de test des requetes SQL----//
     //----------------------------------------//
 
-    //-----1.Insertion en base de données-----//
+    //1.Création ou vérification de la base de données//
+    /*BDD baseDactylo;
+     * baseDactylo.createBDD();
+     * requête done
+     */
+
+    //-----2.Insertion en base de données-----//
     //Cas du joueur inconnu
     /*
      * baseDactylo.insertJoueur("Camille", 12);
      * baseDactylo.insertJoueur("Damien", 4000);
      * baseDactylo.insertJoueur("Thomas", 120);
+     * baseDactylo.deconnexion();
      * requête done
-     //*/
+     */
 
     //Cas du joueur connu avec nouveau score inférieur ou égal
     /*
@@ -30,9 +65,9 @@ int main(int argc, char *argv[])
      * baseDactylo.insertJoueur("Damien", 4000);
      * baseDactylo.insertJoueur("Thomas", 100);
      * requête done
-     //*/
+     */
 
-    //Cas du joueur connu avec nouveau score superieur
+    //Cas du joueur connu avec nouveau score supérieur
     /*
      * baseDactylo.insertJoueur("Camille", 1000);
      * baseDactylo.insertJoueur("Damien", 7000);
@@ -40,28 +75,19 @@ int main(int argc, char *argv[])
      * requête done
      */
 
-    //----2.Delete score en base de données----//
+    //----3.Delete score en base de données----//
     /*
-    * baseDactylo.deleteScore();
-    * requete done
-    */
+     * baseDactylo.deleteScore();
+     * requête done
+     */
 
-    //------3.Selection de 60 mots en BDD------//
+    //------4.Selection de 60 mots en BDD------//
     /*
      * baseDactylo.selectMot();
-     * requete done
+     * requête done
      */
 
     //----------------------------------------//
-    //-----Fin des test des requetes SQL------//
+    //-----Fin des test des requêtes SQL------//
     //----------------------------------------//
-
-
-    //Gestion de la couleur
-    Accueil.setStyleSheet("background-color:#B0E0E6");
-    Accueil.setCouleur("background-color:#B0E0E6");
-
-    Accueil.show();
-
-    return a.exec();
 }

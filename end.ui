@@ -16,8 +16,11 @@
     <pointsize>12</pointsize>
    </font>
   </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Rejouer</string>
   </property>
   <widget class="QPushButton" name="btRestart">
    <property name="geometry">
@@ -31,10 +34,24 @@
    <property name="font">
     <font>
      <family>Verdana</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">:focus {background-color:#CECECE;border-radius:10px;outline:none;font :bold;}
+:!focus{background-color: rgb(255, 255, 255);border-radius:10px}</string>
    </property>
    <property name="text">
     <string>Restart</string>
+   </property>
+   <property name="autoDefault">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QPushButton" name="btQuit">
@@ -49,10 +66,24 @@
    <property name="font">
     <font>
      <family>Verdana</family>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
     </font>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::TabFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">:focus {background-color:#CECECE;border-radius:10px;outline:none;font :bold;}
+:!focus{background-color: rgb(255, 255, 255);border-radius:10px}</string>
    </property>
    <property name="text">
     <string>Exit</string>
+   </property>
+   <property name="autoDefault">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QWidget" name="gridLayoutWidget">

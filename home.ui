@@ -10,6 +10,46 @@
     <height>440</height>
    </rect>
   </property>
+  <property name="palette">
+   <palette>
+    <active>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>255</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </active>
+    <inactive>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>255</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </inactive>
+    <disabled>
+     <colorrole role="Button">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>0</red>
+        <green>255</green>
+        <blue>0</blue>
+       </color>
+      </brush>
+     </colorrole>
+    </disabled>
+   </palette>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
   <property name="windowTitle">
    <string>Accueil</string>
   </property>
@@ -69,6 +109,10 @@ border-radius: 10px;</string>
          <pointsize>12</pointsize>
         </font>
        </property>
+       <property name="styleSheet">
+        <string notr="true">:focus {background-color:#CECECE;}
+:!focus{background-color: rgb(255, 255, 255);}</string>
+       </property>
        <property name="sizeAdjustPolicy">
         <enum>QComboBox::AdjustToMinimumContentsLength</enum>
        </property>
@@ -119,6 +163,9 @@ border-radius: 10px;</string>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QPushButton" name="btPlay">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="minimumSize">
         <size>
          <width>70</width>
@@ -134,12 +181,30 @@ border-radius: 10px;</string>
          <bold>false</bold>
         </font>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::TabFocus</enum>
+       </property>
+       <property name="contextMenuPolicy">
+        <enum>Qt::DefaultContextMenu</enum>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;Verdana&quot;;</string>
+        <string notr="true">:focus {background-color:#CECECE;border-radius:10px;outline:none;font :bold;}
+:!focus{background-color: rgb(255, 255, 255);border-radius:10px}</string>
        </property>
        <property name="text">
         <string>Play</string>
+       </property>
+       <property name="checkable">
+        <bool>false</bool>
+       </property>
+       <property name="autoRepeatDelay">
+        <number>301</number>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -160,12 +225,18 @@ font: 12pt &quot;Verdana&quot;;</string>
          <bold>false</bold>
         </font>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::TabFocus</enum>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;Verdana&quot;;</string>
+        <string notr="true">:focus {background-color:#CECECE;border-radius:10px;outline:none;font :bold;}
+:!focus{background-color: rgb(255, 255, 255);border-radius:10px}</string>
        </property>
        <property name="text">
         <string>Scoreboard</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -186,12 +257,18 @@ font: 12pt &quot;Verdana&quot;;</string>
          <bold>false</bold>
         </font>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::TabFocus</enum>
+       </property>
        <property name="styleSheet">
-        <string notr="true">background-color: rgb(255, 255, 255);
-font: 12pt &quot;Verdana&quot;;</string>
+        <string notr="true">:focus {background-color:#CECECE;border-radius:10px;outline:none;font :bold;}
+:!focus{background-color: rgb(255, 255, 255);border-radius:10px}</string>
        </property>
        <property name="text">
         <string>Exit</string>
+       </property>
+       <property name="autoDefault">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -200,6 +277,12 @@ font: 12pt &quot;Verdana&quot;;</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>btPlay</tabstop>
+  <tabstop>btScoreboard</tabstop>
+  <tabstop>btExit</tabstop>
+  <tabstop>comboBox</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
