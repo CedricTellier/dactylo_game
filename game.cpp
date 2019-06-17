@@ -42,11 +42,11 @@ game::game(QString nomJoueur):
     playlist->setPlaybackMode(QMediaPlaylist::Loop);
 
     //Création d'un mediaPlayer avec la playlist comme argument
-    music = new QMediaPlayer();
-    music->setMedia(playlist);
+    //music = new QMediaPlayer();
+    //music->setMedia(playlist);
     //Gestion du volume
-    music->setVolume(25);
-    music->play();
+    //music->setVolume(25);
+    //music->play();
 
     //On met le focus surla barre de frappe
     ui->leTaper->setFocus();
@@ -90,14 +90,23 @@ void game::creationTableau()
     //Création de la liste de 60 mots
     baseDactylo->selectMot();
 
-    //Insertion des mots dans la tableau du jeu
-    for(int i = 0; i <60; i++)
-    {
-        this->tabMots[i] = baseDactylo->tabWords[i];
-        /*Test en sortie
-        std::cout<< this->tabMots[i].toStdString() << std::endl;
-        */
+
+    for( QString s : baseDactylo->tabWords){
+           std::cout << s.toStdString() << std::endl;
+           this->tabMots.append(s);
     }
+    //Insertion des mots dans la tableau du jeu
+   /* for(int i = 0; i <60; i++)
+    {
+
+        this->tabMots = baseDactylo->tabWords;
+       // Test en sortie
+        if(this->tabMots[i].toStdString() == ""){
+            std::cout<< "word not retrieve" << std::endl;
+        }
+        std::cout<< this->tabMots[i].toStdString() << std::endl;
+
+    }*/
 }
 
 /**
@@ -123,8 +132,8 @@ void game::jouer()
 
     while ((nbMots <60)&&(Joker>0))
         {
-            ui->PBtime->setMaximum(temps/1000);
-            ui->PBtime->setValue(temps/1000);
+            //ui->PBtime->setMaximum(temps/1000);
+            //ui->PBtime->setValue(temps/1000);
 
             //On insère le premier mot dans le label
             ui->lbMots->setText(this->tabMots[nbMots]);
@@ -140,15 +149,15 @@ void game::jouer()
             time->start();
 
             //Création du timer qui gère la progressBar
-            chrono = new QTimer();
-            chrono->setInterval(1000);
+            //chrono = new QTimer();
+           // chrono->setInterval(1000);
             //Connect envoyant le slot correspondant à chaque timeout
-            connect(chrono, SIGNAL(timeout()), this, SLOT(miseAJour()));
-            chrono->start();
+            //connect(chrono, SIGNAL(timeout()), this, SLOT(miseAJour()));
+            //chrono->start();
 
             //Tant que le temps tourne
-            while(time->isActive())
-            {
+            //while(time->isActive())
+           // {
                 //Permet de laisser l'utilisateur frapper
                 QApplication::processEvents();
                 //Si le mot est trouvé
@@ -180,12 +189,12 @@ void game::jouer()
                     valider = true;
                 }
                 //Si le temps touche à sa fin
-                if (ui->PBtime->value()<=0)
-                {
+                //if (ui->PBtime->value()<=0)
+               /* {
                    ui->leTaper->setText("");
                    time->stop();
-                }
-            }
+                }*/
+          //  }
 
             //Si mot non valide
             if (!valider)
@@ -196,7 +205,7 @@ void game::jouer()
                 ui->lbNbJoker->setText(nbJoker);
             }
             //On stoppe le timer de la progressBar
-            chrono->stop();
+            //chrono->stop();
             //On fait tourner la boucle
             nbMots++;
             //On décrémente le temps pour acceler la frappe
@@ -310,41 +319,36 @@ int game::pointsField()
     case 3:
     case 4:
         nbPoints = 25;
-        return nbPoints;
         break;
     case 5:
     case 6:
     case 7:
     case 8:
         nbPoints = 50;
-        return nbPoints;
         break;
     case 9:
     case 10:
     case 11:
     case 12:
         nbPoints = 125;
-        return nbPoints;
         break;
     case 13:
     case 14:
     case 15:
     case 16:
         nbPoints = 200;
-        return nbPoints;
         break;
     case 17:
     case 18:
     case 19:
     case 20:
         nbPoints = 325;
-        return nbPoints;
         break;
     default:
         nbPoints = 25;
-        return nbPoints;
         break;
     }
+    return nbPoints;
 }
 
 /**
@@ -362,26 +366,22 @@ int game::combo()
         nbPoints = 25 + 10;
         return nbPoints;
     case 50:
-        nbPoints = 50 * 1.50;
-        return nbPoints;
+        nbPoints = 50 + 15;
         break;
     case 125:
         nbPoints = 125 * 2;
-        return nbPoints;
         break;
     case 200:
-        nbPoints = 200 * 2.50;
-        return nbPoints;
+        nbPoints = 200 * 3;
         break;
     case 325:
-        nbPoints = 325 * 3;
-        return nbPoints;
+        nbPoints = 325 * 5;
         break;
     default:
         nbPoints = 25 + 10;
-        return nbPoints;
         break;
     }
+    return nbPoints;
 }
 
 /**

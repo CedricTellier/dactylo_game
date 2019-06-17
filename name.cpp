@@ -47,7 +47,7 @@ void Name::on_btStart_clicked()
     //Ouverture de la fenêtre de jeu
     monJeu->show();
     monJeu->creationTableau();
-    monJeu->jouer();
+   // monJeu->jouer();
 }
 
 /**

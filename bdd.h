@@ -5,6 +5,8 @@
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
+#include <QStringList>
+#include <QString>
 
 /**
  * @class BDD class
@@ -83,7 +85,7 @@ public:
      * @brief tabWords
      * Variable pour la selection des mots
      */
-    QString tabWords[60];
+    QStringList tabWords;
 
 private:
     /**

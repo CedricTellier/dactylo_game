@@ -75,16 +75,28 @@ void BDD::selectMot()
 {
     QSqlQuery selectMot;
     selectMot.prepare("SELECT word FROM T_mot ORDER BY random() LIMIT 60");
-
     if(selectMot.exec())
     {
-        while (selectMot.next())
+        std::cout << "bite" << std::endl;
+        while(selectMot.next())
         {
-            for (int i = 0; i<60; i++)
+            std::cout << "bite" << std::endl;
+            this->tabWords << selectMot.value(0).toString();
+            //QStringList list;
+
+                //list <<  selectMot.value(0).toString();
+
+            /*for (int i = 1; i<60; i++)
             {
                 tabWords[i] = selectMot.value(0).toString();
-                selectMot.next();
-            }
+                QString country = selectMot.value(0).toString();
+                //selectMot.next();
+                std::cout << tabWords[i].toStdString() << std::endl;
+            }*/
+        }
+        std::cout << this->tabWords.size() << std::endl;
+        for(auto s : this->tabWords){
+            std::cout << "bite" << std::endl;
         }
         std::cout << "Words Selection done" << std::endl;
     }

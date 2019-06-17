@@ -113,7 +113,7 @@ public:
      * @brief tabMots
      * Tableau de mots utilisé pour la partie
      */
-    QString tabMots[60];
+    QStringList tabMots;
 
 private slots:
 
