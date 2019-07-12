@@ -7,12 +7,12 @@
  * @param parent
  * @brief Aucun parent (Pas d'héritage)
  */
-Name::Name(QWidget *parent) :
-    QWidget(parent),
-    ui(new Ui::Name)
+Name::Name(QWidget* parent)
+  : QWidget(parent)
+  , ui(new Ui::Name)
 {
-    ui->setupUi(this);
-    ui->lNom->setFocus();
+  ui->setupUi(this);
+  ui->lNom->setFocus();
 }
 
 /**
@@ -21,7 +21,7 @@ Name::Name(QWidget *parent) :
  */
 Name::~Name()
 {
-    delete ui;
+  delete ui;
 }
 
 /**
@@ -33,21 +33,21 @@ Name::~Name()
  */
 void Name::on_btStart_clicked()
 {
-    //Création de la fenètre de jeu
-    //Récupération du nom de l'utilisateur pour transfert vers la fenetre de jeu en passant par le constructeur avec paramètre
-    game * monJeu = new game(ui->lNom->text());
+  //Création de la fenètre de jeu
+  //Récupération du nom de l'utilisateur pour transfert vers la fenetre de jeu en passant par le constructeur avec paramètre
+  game* monJeu = new game(ui->lNom->text());
 
-    //Gestion de la couleur
-    monJeu->setStyleSheet(couleur);
-    monJeu->setCouleur(couleur);
+  //Gestion de la couleur
+  monJeu->setStyleSheet(couleur);
+  monJeu->setCouleur(couleur);
 
-    //Fermeture de la fenête de nom
-    this->close();
+  //Fermeture de la fenête de nom
+  this->close();
 
-    //Ouverture de la fenêtre de jeu
-    monJeu->show();
-    monJeu->creationTableau();
-   // monJeu->jouer();
+  //Ouverture de la fenêtre de jeu
+  monJeu->show();
+  monJeu->creationTableau();
+  monJeu->jouer();
 }
 
 /**
@@ -58,5 +58,5 @@ void Name::on_btStart_clicked()
  */
 void Name::setCouleur(QString couleur)
 {
-    this->couleur = couleur;
+  this->couleur = couleur;
 }
